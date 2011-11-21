@@ -4,6 +4,7 @@
 
 Name:		recorditnow
 Version:	0.8.1
+# use 69.x release for 0.8.1 to allow updates for MIB users
 Release:	%mkrel 69.2
 Summary:	Desktop session recorder for KDE 4
 License:	GPLv2+
@@ -17,7 +18,11 @@ BuildRequires:	gettext
 BuildRequires:	qt4-devel
 BuildRequires:	kdelibs4-devel >= 4.4.0
 BuildRequires:	libxfixes-devel
+BuildRequires:	libxcursor-devel
+BuildRequires:	libxext-devel
+BuildRequires:	libx11-devel
 BuildRequires:	ffmpeg-devel
+BuildRequires:	ffmpeg
 BuildRequires:	mencoder
 BuildRequires:	recordmydesktop >= 0.3.8.1
 BuildRoot:	%{_tmppath}/%{name}-%{version}
