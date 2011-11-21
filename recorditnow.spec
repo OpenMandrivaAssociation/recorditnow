@@ -13,6 +13,7 @@ URL:		http://recorditnow.sourceforge.net/
 Source0:	http://sourceforge.net/projects/recorditnow/files/%{name}-%{version}.tar.bz2
 Patch0:		recorditnow-0.8.1-ru.patch
 Patch1:		recorditnow-0.8.1-linking.patch
+BuildRequires:	automoc4
 BuildRequires:	cmake >= 2.6
 BuildRequires:	gettext
 BuildRequires:	qt4-devel
