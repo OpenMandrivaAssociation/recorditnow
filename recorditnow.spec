@@ -5,7 +5,7 @@
 Name:		recorditnow
 Version:	0.8.1
 # use 69.x release for 0.8.1 to allow updates for MIB users
-Release:	%mkrel 69.2
+Release:	%mkrel 69.3
 Summary:	Desktop session recorder for KDE 4
 License:	GPLv2+
 Group:		Video
