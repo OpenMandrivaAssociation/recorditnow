@@ -1,0 +1,14 @@
+diff -urN recorditnow-0.8.1/src/CMakeLists.txt recorditnow-0.8.1-patched/src/CMakeLists.txt
+--- recorditnow-0.8.1/src/CMakeLists.txt	2010-08-12 15:27:13.000000000 +1100
++++ recorditnow-0.8.1-patched/src/CMakeLists.txt	2011-11-22 02:09:44.404190203 +1100
+@@ -121,6 +121,10 @@
+                                   recorditnow_recorder
+                                   recorditnow_encoder
+                                   recorditnow_keymon
++                                  recorditnow_plugin
++                                  ${X11_X11_LIB}
++                                  ${X11_Xext_LIB}
++                                  ${X11_Xfixes_LIB}
+                                   ${X11_Xcursor_LIB})
+ 
+ if (BUILD_WITH_JOSCHY)
