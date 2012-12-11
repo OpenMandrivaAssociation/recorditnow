@@ -134,3 +134,24 @@ kbuildsycoca4
 %clean
 rm -rf %{buildroot}
 
+
+
+%changelog
+* Wed Nov 23 2011 Andrey Bondrov <abondrov@mandriva.org> 0.8.1-69.3mdv2011.0
++ Revision: 732725
+- Update russian translation
+
+* Mon Nov 21 2011 Andrey Bondrov <abondrov@mandriva.org> 0.8.1-69.2
++ Revision: 732213
+- imported package recorditnow
+
+
+* Mon Nov 21 2011 Andrey Bondrov <andrey.bondrov@rosalab.ru> 0.8.1-69.2mib2010.2
+- Add russian translation by VictorR2007
+- Fix BuildRequires
+- Add patch1 to fix linking
+- Minor spec cleanup and update
+
+* Wed Jun 08 2011 Giovanni Mariani <mc2374@mclink.it> 0.8.1-69.1mib2010.2
+- First port to Mandriva 2010.2 for the MIB
+- Splitted the package in main, two libraries and development packages
