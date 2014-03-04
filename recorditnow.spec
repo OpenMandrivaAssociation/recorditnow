@@ -5,7 +5,7 @@
 Name:		recorditnow
 Version:	0.8.1
 # use 69.x release for 0.8.1 to allow updates for MIB users
-Release:	%mkrel 69.3
+Release:	70
 Summary:	Desktop session recorder for KDE 4
 License:	GPLv2+
 Group:		Video
@@ -18,15 +18,14 @@ BuildRequires:	cmake >= 2.6
 BuildRequires:	gettext
 BuildRequires:	qt4-devel
 BuildRequires:	kdelibs4-devel >= 4.4.0
-BuildRequires:	libxfixes-devel
-BuildRequires:	libxcursor-devel
-BuildRequires:	libxext-devel
-BuildRequires:	libx11-devel
+BuildRequires:	pkgconfig(xfixes)
+BuildRequires:	pkgconfig(xcursor)
+BuildRequires:	pkgconfig(xext)
+BuildRequires:	pkgconfig(x11)
 BuildRequires:	ffmpeg-devel
 BuildRequires:	ffmpeg
 BuildRequires:	mencoder
 BuildRequires:	recordmydesktop >= 0.3.8.1
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 Requires:	kdelibs4-core >= 4.4.0
 Requires:	ffmpeg
 Requires:	mencoder
@@ -45,7 +44,6 @@ Features:
     Upload your videos to YouTube or blip.tv.
 
 %files -f %{name}.lang
-%defattr(-,root,root)
 %doc COPYING DEPENDENCIES
 %{_kde_bindir}/%{name}
 %{_kde_libdir}/kde4/libexec/%{name}_helper
@@ -65,13 +63,12 @@ Features:
 %package -n	%{libname}
 Summary:	Library package for recorditnow
 Group:		System/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{EVRD}
 
 %description -n %{libname}
 This package contains the dynamic libraries needed for recorditnow.
 
 %files -n %{libname}
-%defattr(-,root,root)
 %{_kde_libdir}/librecordit*.so
 
 #------------------------------------------------------------
@@ -79,13 +76,12 @@ This package contains the dynamic libraries needed for recorditnow.
 %package -n	%{joschylib}
 Summary:	Support library for recorditnow
 Group:		System/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{EVRD}
 
 %description -n %{joschylib}
 This package contains the dynamic libraries needed for recorditnow.
 
 %files -n %{joschylib}
-%defattr(-,root,root)
 %{_kde_libdir}/libjoschycore.so
 %{_kde_libdir}/joschy/*
 
@@ -104,7 +100,6 @@ This package contains the header files needed when building applications
 based on the joschycore library.
 
 %files -n %{joschydevel}
-%defattr(-,root,root)
 %{_kde_includedir}/joschycore/*.h
 
 #------------------------------------------------------------
@@ -120,7 +115,6 @@ based on the joschycore library.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std -C build
 
 %find_lang %{name}
@@ -132,8 +126,6 @@ kbuildsycoca4
 kbuildsycoca4
 
 %clean
-rm -rf %{buildroot}
-
 
 
 %changelog
