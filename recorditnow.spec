@@ -18,15 +18,15 @@ BuildRequires:	cmake >= 2.6
 BuildRequires:	gettext
 BuildRequires:	qt4-devel
 BuildRequires:	kdelibs4-devel >= 4.4.0
-BuildRequires:	libxfixes-devel
-BuildRequires:	libxcursor-devel
-BuildRequires:	libxext-devel
-BuildRequires:	libx11-devel
+BuildRequires:	pkgconfig(xfixes)
+BuildRequires:	pkgconfig(xcursor)
+BuildRequires:	pkgconfig(xext)
+BuildRequires:	pkgconfig(x11)
 BuildRequires:	ffmpeg-devel >= 2.5.4
 BuildRequires:	ffmpeg >= 2.5.4
 BuildRequires:	mencoder
 BuildRequires:	recordmydesktop >= 0.3.8.1
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+
 Requires:	kdelibs4-core >= 4.4.0
 Requires:	ffmpeg
 Requires:	mencoder
