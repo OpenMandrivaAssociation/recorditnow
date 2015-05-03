@@ -5,7 +5,7 @@
 Name:		recorditnow
 Version:	0.8.1
 # use 69.x release for 0.8.1 to allow updates for MIB users
-Release:	%mkrel 69.3
+Release:	%mkrel 69.5
 Summary:	Desktop session recorder for KDE 4
 License:	GPLv2+
 Group:		Video
@@ -22,8 +22,8 @@ BuildRequires:	libxfixes-devel
 BuildRequires:	libxcursor-devel
 BuildRequires:	libxext-devel
 BuildRequires:	libx11-devel
-BuildRequires:	ffmpeg-devel
-BuildRequires:	ffmpeg
+BuildRequires:	ffmpeg-devel >= 2.5.4
+BuildRequires:	ffmpeg >= 2.5.4
 BuildRequires:	mencoder
 BuildRequires:	recordmydesktop >= 0.3.8.1
 BuildRoot:	%{_tmppath}/%{name}-%{version}
@@ -120,7 +120,6 @@ based on the joschycore library.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std -C build
 
 %find_lang %{name}
@@ -131,27 +130,7 @@ kbuildsycoca4
 %postun
 kbuildsycoca4
 
-%clean
-rm -rf %{buildroot}
 
 
 
-%changelog
-* Wed Nov 23 2011 Andrey Bondrov <abondrov@mandriva.org> 0.8.1-69.3mdv2011.0
-+ Revision: 732725
-- Update russian translation
 
-* Mon Nov 21 2011 Andrey Bondrov <abondrov@mandriva.org> 0.8.1-69.2
-+ Revision: 732213
-- imported package recorditnow
-
-
-* Mon Nov 21 2011 Andrey Bondrov <andrey.bondrov@rosalab.ru> 0.8.1-69.2mib2010.2
-- Add russian translation by VictorR2007
-- Fix BuildRequires
-- Add patch1 to fix linking
-- Minor spec cleanup and update
-
-* Wed Jun 08 2011 Giovanni Mariani <mc2374@mclink.it> 0.8.1-69.1mib2010.2
-- First port to Mandriva 2010.2 for the MIB
-- Splitted the package in main, two libraries and development packages
