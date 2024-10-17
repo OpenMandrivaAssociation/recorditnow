@@ -9,7 +9,7 @@ Release:	71
 Summary:	Desktop session recorder for KDE 4
 License:	GPLv2+
 Group:		Video
-URL:		http://recorditnow.sourceforge.net/
+URL:		https://recorditnow.sourceforge.net/
 Source0:	http://sourceforge.net/projects/recorditnow/files/%{name}-%{version}.tar.bz2
 Patch0:		recorditnow-0.8.1-ru.patch
 Patch1:		recorditnow-0.8.1-linking.patch
